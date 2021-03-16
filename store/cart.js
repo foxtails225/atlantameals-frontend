@@ -4,15 +4,15 @@ export const state = () => ({
   portionIndex: 0,
   selectedBreakfast: [],
   selectedSnacks: [],
-  selectedVeganBowl: [],
+  selectedVeganBowl: []
 })
 
 export const mutations = {
-  setExplicitMeals(state){
-    state.selectedMeals = []
+  setExplicitMeals(state) {
+    state.selectedMeals = [];
   },
-  setExplicitDishes(state){
-    state.selectedDishes = []
+  setExplicitDishes(state) {
+    state.selectedDishes = [];
   },
   // method that generates the meal items
   generateMealItems(state, mealCount) {
@@ -60,7 +60,7 @@ export const mutations = {
     return true;
   },
   // set the portion size
-  selectPortionSize(state, portionValue){
+  selectPortionSize(state, portionValue) {
     state.portionIndex = portionValue
   },
   // method that sets the selected breakfast, it does work with 2 items
@@ -68,13 +68,13 @@ export const mutations = {
     state.selectedBreakfast[breakfast.index] = breakfast.data
   },
   removeBreakfast(state, id) {
-    for(let i = 0; i < state.selectedBreakfast.length; i++) {
+    for (let i = 0; i < state.selectedBreakfast.length; i++) {
       if (typeof state.selectedBreakfast[i] !== 'undefined') {
         if (state.selectedBreakfast[i].id === id) {
-          delete(state.selectedBreakfast[i])
+          delete (state.selectedBreakfast[i])
           let rebasedArr = []
           // reset the array
-          for(let a = 0; a < state.selectedBreakfast.length; a++) {
+          for (let a = 0; a < state.selectedBreakfast.length; a++) {
             if (typeof state.selectedBreakfast[a] !== 'undefined') {
               rebasedArr.push(state.selectedBreakfast[a])
             }
@@ -90,13 +90,13 @@ export const mutations = {
     state.selectedSnacks[snack.index] = snack.data
   },
   removeSnack(state, id) {
-    for(let i = 0; i < state.selectedSnacks.length; i++) {
+    for (let i = 0; i < state.selectedSnacks.length; i++) {
       if (typeof state.selectedSnacks[i] !== 'undefined') {
         if (state.selectedSnacks[i].id === id) {
-          delete(state.selectedSnacks[i])
+          delete (state.selectedSnacks[i])
           let rebasedArr = []
           // reset the array
-          for(let a = 0; a < state.selectedSnacks.length; a++) {
+          for (let a = 0; a < state.selectedSnacks.length; a++) {
             if (typeof state.selectedSnacks[a] !== 'undefined') {
               rebasedArr.push(state.selectedSnacks[a])
             }
@@ -107,17 +107,17 @@ export const mutations = {
       }
     }
   },
-  setVeganBowlItem(state, veganBowl){
+  setVeganBowlItem(state, veganBowl) {
     state.selectedVeganBowl[veganBowl.index] = veganBowl.data
   },
   removeVeganBowl(state, id) {
-    for(let i = 0; i < state.selectedVeganBowl.length; i++) {
+    for (let i = 0; i < state.selectedVeganBowl.length; i++) {
       if (typeof state.selectedVeganBowl[i] !== 'undefined') {
         if (state.selectedVeganBowl[i].id === id) {
-          delete(state.selectedVeganBowl[i])
+          delete (state.selectedVeganBowl[i])
           let rebasedArr = []
           // reset the array
-          for(let a = 0; a < state.selectedVeganBowl.length; a++) {
+          for (let a = 0; a < state.selectedVeganBowl.length; a++) {
             if (typeof state.selectedVeganBowl[a] !== 'undefined') {
               rebasedArr.push(state.selectedVeganBowl[a])
             }

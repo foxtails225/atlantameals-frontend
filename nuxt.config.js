@@ -74,7 +74,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    BaseURL: 'http://localhost/atlantameals/backend/atlanta-meal-prep/',
+    BaseURL: 'http://localhost:8081/directus/atlanta-meal-prep/',
   },
   /*
    ** Build configuration

@@ -37,8 +37,12 @@ export const state = () => ({
   getCartId: 'custom/cart/get-cart-id',
   saveCartContent: 'custom/cart/save-cart-content',
   urlPlaceOrder: 'custom/cart/create-new-order',
-  baseUrl:
-    'http://127.0.0.1:8081/backend/public/atlanta-meal-prep/',
-  baseImgUrl: 'http://127.0.0.1:8081/',
+  // baseUrl: 'http://127.0.0.1:8081/directus/public/atlanta-meal-prep/',
+  // baseImgUrl: 'http://127.0.0.1:8081/'
+
+  // TODO: activate in the prod env
+  baseUrl: 'http://18.221.253.126/public/atlanta-meal-prep/',
+  baseImgUrl: 'http://18.221.253.126/'
+  // FIXME: previous developer
   // baseUrl: 'https://projects.solcode.net/backend/public/atlanta-meal-prep/',
-})
+});

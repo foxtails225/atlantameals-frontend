@@ -89,7 +89,7 @@
         </svg>
         <nuxt-link to>Order and menu</nuxt-link>
       </li>
-      <li id="link-order-history" class="left-panel-nav" @click="openView(3)">
+      <li id="link-order-history" class="left-panel-nav" :class="{ 'auth-hidden': isAuth }" @click="openView(3)">
         <svg
           width="24"
           height="24"
@@ -126,25 +126,24 @@
         </svg>
         <nuxt-link to>History of orders</nuxt-link>
       </li>
-      <li id="link-weekly-menu" class="left-panel-nav" @click="openView(8)">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
+      <li id="link-weekly-menu" class="left-panel-nav" :class="{ 'auth-hidden': isAuth }" @click="openView(8)">
+        <svg 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          style="margin-left: 6px; transform: translateY(0px) translateX(-4px);"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M5.9059 0.751134V6.93821C5.9059 7.44925 6.4437 7.78163 6.90079 7.55308L9.34316 6.3319L11.7855 7.55308C12.2426 7.78163 12.7804 7.44925 12.7804 6.93821V0.751134L16.5603 0.75C17.3181 0.75 17.9363 1.36658 17.9363 2.12604V15.8728C17.9363 16.6306 17.3197 17.2489 16.5603 17.2489L2.12604 17.25C1.36825 17.25 0.75 16.6334 0.75 15.874V2.12717C0.75 1.36938 1.36658 0.751134 2.12604 0.751134H5.9059ZM13.5827 12.0046V14.7993C13.5827 15.014 13.7477 15.1879 13.9585 15.1879H14.6962C14.9038 15.1879 15.0721 15.0141 15.0721 14.7993V12.0046L15.3988 12.3464C15.5445 12.4988 15.7793 12.5003 15.9283 12.3444L16.45 11.7986C16.5968 11.6451 16.5993 11.3987 16.453 11.2456L14.854 9.57279C14.5631 9.26852 14.0916 9.26852 13.8008 9.57279L12.2018 11.2456C12.0566 11.3975 12.0557 11.6427 12.2048 11.7986L12.7264 12.3444C12.8732 12.4979 13.1107 12.4984 13.256 12.3464L13.5827 12.0046ZM11.4056 0.751302V5.82606L9.65065 4.9486C9.45711 4.85183 9.22931 4.85183 9.03578 4.9486L7.28086 5.82606V0.751302H11.4056Z"
-            fill="#3C3C3C"
+          >
+          <rect width="24" height="24" fill="white"/>
+          <path 
+            fill-rule="evenodd" 
+            clip-rule="evenodd" 
+            d="M6.32557 16.4994L5.57557 11.7802C4.71682 11.4778 3.9927 10.8811 3.53145 10.0957C3.0702 9.31025 2.90159 8.38679 3.05549 7.48887C3.20939 6.59095 3.67586 5.77651 4.37229 5.1898C5.06871 4.6031 5.95015 4.28198 6.86048 4.28334C7.43397 4.28142 8.00052 4.40889 8.51801 4.65625C8.93976 4.13865 9.47132 3.72148 10.0742 3.43498C10.677 3.14848 11.336 2.99984 12.0033 2.99984C12.6707 2.99984 13.3297 3.14848 13.9325 3.43498C14.5353 3.72148 15.0669 4.13865 15.4886 4.65625C16.0042 4.40983 16.5684 4.28239 17.1398 4.28334C18.0501 4.28198 18.9315 4.6031 19.6279 5.1898C20.3244 5.77651 20.7908 6.59095 20.9447 7.48887C21.0986 8.38679 20.93 9.31025 20.4688 10.0957C20.0075 10.8811 19.2834 11.4778 18.4247 11.7802L17.6747 16.4994H6.32557ZM6.3252 20.357V17.7852H17.6743V20.357C17.6743 20.5276 17.6066 20.6911 17.4861 20.8117C17.3656 20.9323 17.2022 21 17.0318 21H6.96765C6.79726 21 6.63385 20.9323 6.51337 20.8117C6.39288 20.6911 6.3252 20.5276 6.3252 20.357Z" fill="#3C3C3C"
           />
         </svg>
         <nuxt-link to>Weekly menu</nuxt-link>
       </li>
-      <li id="link-profile" class="left-panel-nav" @click="openView(2)">
+      <li id="link-profile" class="left-panel-nav" :class="{ 'auth-hidden': isAuth }" @click="openView(2)">
         <svg
           width="24"
           height="24"
@@ -177,7 +176,7 @@
         </svg>
         <nuxt-link to>Profile</nuxt-link>
       </li>
-      <li id="link-rewards" class="left-panel-nav" @click="openView(4)">
+      <li id="link-rewards" class="left-panel-nav" :class="{ 'auth-hidden': isAuth }" @click="openView(4)">
         <svg
           width="24"
           height="24"
@@ -216,9 +215,9 @@
       </li>
       <li id="link-delivery" class="left-panel-nav" @click="openView(7)">
         <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style="margin-left: 6px;transform: translateY(0px) translateX(-4px);"
@@ -379,150 +378,156 @@ export default {
     return {
       isMobile: false,
       aboutContent: false,
-    }
+      isAuth: true
+    };
   },
   mounted() {
-    const self = this
+    const self = this;
+    this.isAuth = !this.$store.state.logedIn;
+
+    console.log("AAAAAAAAAAAAAAAAA")
+    console.log(!this.$store.state.logedIn);
+
     if (window.innerWidth <= 1283) {
-      this.isMobile = true
+      this.isMobile = true;
     } else {
-      self.isMobile = false
+      self.isMobile = false;
     }
 
     window.onload = () => {
       if (window.innerWidth <= 1283) {
-        self.isMobile = true
+        self.isMobile = true;
       } else {
-        self.isMobile = false
+        self.isMobile = false;
       }
-    }
+    };
     document
       .getElementById('link-order-and-menu')
-      .classList.add('left-panel-active')
+      .classList.add('left-panel-active');
   },
   created() {
-    const self = this
+    const self = this;
     this.$nuxt.$on('mobile-menu-toggle', () => {
-      if (self.isMobile) self.isMobile = false
-      else self.isMobile = true
-    })
+      if (self.isMobile) self.isMobile = false;
+      else self.isMobile = true;
+    });
   },
   methods: {
     toggleAboutContent() {
-      if (this.aboutContent) this.aboutContent = false
-      else this.aboutContent = true
+      if (this.aboutContent) this.aboutContent = false;
+      else this.aboutContent = true;
     },
     goToShoppingCart() {
-      $nuxt.$emit('toggle-view', 4)
+      $nuxt.$emit('toggle-view', 4);
       if (window.innerWidth <= 1282) {
-        $nuxt.$emit('mobile-menu-toggle')
+        $nuxt.$emit('mobile-menu-toggle');
       }
-      history.pushState(null, null, 'wizard?' + urlParam)
-      this.checkIfThePageIsWizard(4)
+      history.pushState(null, null, 'wizard?' + urlParam);
+      this.checkIfThePageIsWizard(4);
     },
     logOut() {
-      this.$store.commit('setLogedIn', false)
+      this.$store.commit('setLogedIn', false);
       this.$router.push({
-        path: '/',
-      })
+        path: '/'
+      });
     },
     hideMobile() {
       if (window.innerWidth <= 1282) {
-        $nuxt.$emit('mobile-menu-toggle')
+        $nuxt.$emit('mobile-menu-toggle');
       }
     },
     openView(nbr) {
-      this.checkIfThePageIsWizard(nbr)
+      this.checkIfThePageIsWizard(nbr);
       if (window.innerWidth <= 1282) {
-        $nuxt.$emit('mobile-menu-toggle')
+        $nuxt.$emit('mobile-menu-toggle');
       }
-      $nuxt.$emit('wizard-view-changed', nbr)
-      this.selectNavItem(nbr)
+      $nuxt.$emit('wizard-view-changed', nbr);
+      this.selectNavItem(nbr);
     },
     selectNavItem(nbr) {
-      let navId = null
-      let urlParam = 'default'
+      let navId = null;
+      let urlParam = 'default';
       // which id to toggle
       switch (nbr) {
         case 1:
-          navId = 'link-order-and-menu'
-          urlParam = 'order'
-          break
+          navId = 'link-order-and-menu';
+          urlParam = 'order';
+          break;
         case 2:
-          navId = 'link-profile'
-          urlParam = 'profile'
-          break
+          navId = 'link-profile';
+          urlParam = 'profile';
+          break;
         case 3:
-          navId = 'link-order-history'
-          urlParam = 'order-history'
-          break
+          navId = 'link-order-history';
+          urlParam = 'order-history';
+          break;
         case 4:
-          navId = 'link-rewards'
-          urlParam = 'rewards-and-referals'
-          break
+          navId = 'link-rewards';
+          urlParam = 'rewards-and-referals';
+          break;
         case 7:
-          navId = 'link-delivery'
-          urlParam = 'delivery-and-pickup'
-          break
+          navId = 'link-delivery';
+          urlParam = 'delivery-and-pickup';
+          break;
       }
-      const navItems = document.querySelectorAll('.left-panel-nav')
+      const navItems = document.querySelectorAll('.left-panel-nav');
 
       navItems.forEach((element) => {
-        element.classList.remove('left-panel-active')
-      })
-      history.pushState(null, null, 'wizard?' + urlParam)
-      document.getElementById(navId).classList.add('left-panel-active')
+        element.classList.remove('left-panel-active');
+      });
+      history.pushState(null, null, 'wizard?' + urlParam);
+      document.getElementById(navId).classList.add('left-panel-active');
     },
     closeButton() {
-      $nuxt.$emit('mobile-menu-toggle')
+      $nuxt.$emit('mobile-menu-toggle');
     },
     checkIfThePageIsWizard(nbr = null) {
       // check the page name
-      const pathName = window.location.pathname
+      const pathName = window.location.pathname;
 
       if (!pathName.includes('wizard')) {
-        let urlAddition = ''
-        let urlParam = ''
-        let navId = ''
+        let urlAddition = '';
+        let urlParam = '';
+        let navId = '';
         if (nbr != null) {
           switch (nbr) {
             case 1:
-              navId = 'link-order-and-menu'
-              urlParam = 'order'
-              break
+              navId = 'link-order-and-menu';
+              urlParam = 'order';
+              break;
             case 2:
-              navId = 'link-profile'
-              urlParam = 'profile'
-              break
+              navId = 'link-profile';
+              urlParam = 'profile';
+              break;
             case 3:
-              navId = 'link-order-history'
-              urlParam = 'order-history'
-              break
+              navId = 'link-order-history';
+              urlParam = 'order-history';
+              break;
             case 4:
-              navId = 'link-rewards'
-              urlParam = 'rewards-and-referals'
-              break
+              navId = 'link-rewards';
+              urlParam = 'rewards-and-referals';
+              break;
             case 7:
-              navId = 'link-delivery'
-              urlParam = 'delivery-and-pickup'
-              break
+              navId = 'link-delivery';
+              urlParam = 'delivery-and-pickup';
+              break;
           }
-          urlAddition += '?' + urlParam
+          urlAddition += '?' + urlParam;
         }
 
         // redirect to the wizard
         this.$router.push({
-          path: '/wizard' + urlAddition,
-        })
+          path: '/wizard' + urlAddition
+        });
       }
     },
     mobileRedirect() {
       if (window.innerWidth <= 1282) {
-        $nuxt.$emit('mobile-menu-toggle')
+        $nuxt.$emit('mobile-menu-toggle');
       }
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -532,11 +537,12 @@ export default {
   background: #ffffff;
   box-shadow: 9px 0px 16px #f6f7fa;
 }
-
+.auth-hidden {
+  display: none !important;
+}
 .close-button {
   display: none;
 }
-
 .bottom-part {
   position: absolute;
   bottom: 0px;
@@ -573,7 +579,7 @@ export default {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: #A4B6C0;
+  color: #a4b6c0;
 }
 
 .bottom-info a {
@@ -582,7 +588,7 @@ export default {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: #A4B6C0;
+  color: #a4b6c0;
 }
 
 .left-column-logo {
@@ -634,7 +640,7 @@ export default {
   line-height: 18px;
   letter-spacing: 0.192941px;
   color: #293f94 !important;
-  margin-top: 20px;
+  height: 58px;
 }
 
 .active-wizard-left-menu li::before {

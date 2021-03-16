@@ -26,28 +26,28 @@
 </template>
 
 <script>
-import leftPanel from './../components/wizard/leftPanel.vue'
-import orderPanel from './../components/wizard/orderPanel.vue'
-import viewController from './../components/wizard/viewController.vue'
-import profileView from './../components/wizard/views/profileView.vue'
-import deleteMealPopup from './../components/popups/deleteMealPopup.vue'
-import orderHistoryView from './../components/wizard/views/ordersHistoryView.vue'
-import filterPopup from './../components/popups/filterPopup.vue'
-import dishInfoPopup from './../components/popups/dishInfoPopup.vue'
-import { setGlobalFilters } from './../components/mealFunctions.js'
-import duplicateMealPopup from '@/components/popups/duplicateMealPopup'
-import rewardsView from '@/components/wizard/views/rewardsView'
-import editRefferalCodePopup from '@/components/popups/editRefferalCodePopup'
-import refferalShareWithEmail from '@/components/popups/refferalShareWithEmail'
-import refferalShareWithLink from '@/components/popups/refferalShareWithLink'
-import giftCardRedeemPopup from '@/components/popups/giftCardRedeemPopup'
-import giftCardBuyPopup from '@/components/popups/giftCardBuyPopup'
-import changePasswordPopup from '@/components/popups/changePasswordPopup'
-import changeEmailPopup from '@/components/popups/changeEmailPopup'
-import addPaymentCardPopup from '@/components/popups/addPaymentCardPopup'
-import deletePaymentMethod from '@/components/popups/deletePaymentMethod'
-import deliveryView from '@/components/wizard/views/deliveryView'
-import weeklyMenuView from '@/components/wizard/views/weeklyMenuView'
+import leftPanel from './../components/wizard/leftPanel.vue';
+import orderPanel from './../components/wizard/orderPanel.vue';
+import viewController from './../components/wizard/viewController.vue';
+import profileView from './../components/wizard/views/profileView.vue';
+import deleteMealPopup from './../components/popups/deleteMealPopup.vue';
+import orderHistoryView from './../components/wizard/views/ordersHistoryView.vue';
+import filterPopup from './../components/popups/filterPopup.vue';
+import dishInfoPopup from './../components/popups/dishInfoPopup.vue';
+import { setGlobalFilters } from './../components/mealFunctions.js';
+import duplicateMealPopup from '@/components/popups/duplicateMealPopup';
+import rewardsView from '@/components/wizard/views/rewardsView';
+import editRefferalCodePopup from '@/components/popups/editRefferalCodePopup';
+import refferalShareWithEmail from '@/components/popups/refferalShareWithEmail';
+import refferalShareWithLink from '@/components/popups/refferalShareWithLink';
+import giftCardRedeemPopup from '@/components/popups/giftCardRedeemPopup';
+import giftCardBuyPopup from '@/components/popups/giftCardBuyPopup';
+import changePasswordPopup from '@/components/popups/changePasswordPopup';
+import changeEmailPopup from '@/components/popups/changeEmailPopup';
+import addPaymentCardPopup from '@/components/popups/addPaymentCardPopup';
+import deletePaymentMethod from '@/components/popups/deletePaymentMethod';
+import deliveryView from '@/components/wizard/views/deliveryView';
+import weeklyMenuView from '@/components/wizard/views/weeklyMenuView';
 
 export default {
   components: {
@@ -71,7 +71,7 @@ export default {
     addPaymentCardPopup,
     deletePaymentMethod,
     deliveryView,
-    weeklyMenuView,
+    weeklyMenuView
   },
   data() {
     return {
@@ -94,251 +94,251 @@ export default {
       changePassword: false,
       changeEmailPopup: false,
       addPaymentMethod: false,
-      deletePayment: false,
-    }
+      deletePayment: false
+    };
   },
   created() {
-    const self = this
+    const self = this;
     // subscribe the events for handling the view change
     this.$nuxt.$on('wizard-view-changed', (nbr) => {
-      self.wizardView = nbr
-    })
+      self.wizardView = nbr;
+    });
 
     // change email
     this.$nuxt.$on('open-remove-card', (id) => {
-      self.deletePayment = true
-      $nuxt.$emit('load-card-delete-id', id)
-    })
+      self.deletePayment = true;
+      $nuxt.$emit('load-card-delete-id', id);
+    });
 
     this.$nuxt.$on('close-remove-card', () => {
-      self.deletePayment = false
-    })
+      self.deletePayment = false;
+    });
     // end of change email
 
     // popups
     this.$nuxt.$on('open-popup-delete', () => {
-      self.deleteMealPopup = true
-    })
+      self.deleteMealPopup = true;
+    });
 
     this.$nuxt.$on('open-gift-card', () => {
-      self.giftCardBuy = true
-    })
+      self.giftCardBuy = true;
+    });
 
     this.$nuxt.$on('close-gift-card', () => {
-      self.giftCardBuy = false
-    })
+      self.giftCardBuy = false;
+    });
 
     // change password
     this.$nuxt.$on('open-change-password', () => {
-      self.changePassword = true
-    })
+      self.changePassword = true;
+    });
 
     this.$nuxt.$on('close-change-password', () => {
-      self.changePassword = false
-    })
+      self.changePassword = false;
+    });
     // end of change password
 
     // change email
     this.$nuxt.$on('open-change-email', () => {
-      self.changeEmailPopup = true
-    })
+      self.changeEmailPopup = true;
+    });
 
     this.$nuxt.$on('close-change-email', () => {
-      self.changeEmailPopup = false
-    })
+      self.changeEmailPopup = false;
+    });
     // end of change email
 
     // add card
     this.$nuxt.$on('open-add-card', () => {
-      self.addPaymentMethod = true
-    })
+      self.addPaymentMethod = true;
+    });
 
     this.$nuxt.$on('close-add-card', () => {
-      self.addPaymentMethod = false
-    })
+      self.addPaymentMethod = false;
+    });
     // end of add card
 
     this.$nuxt.$on('open-redeem-card', () => {
-      self.redeemGiftCard = true
-    })
+      self.redeemGiftCard = true;
+    });
 
     this.$nuxt.$on('close-redeem-card', () => {
-      self.redeemGiftCard = false
-    })
+      self.redeemGiftCard = false;
+    });
 
     this.$nuxt.$on('open-share-link', () => {
-      self.shareWithLink = true
-    })
+      self.shareWithLink = true;
+    });
 
     this.$nuxt.$on('close-share-link', () => {
-      self.shareWithLink = false
-    })
+      self.shareWithLink = false;
+    });
 
     this.$nuxt.$on('open-share-email', () => {
-      self.shareWithEmail = true
-    })
+      self.shareWithEmail = true;
+    });
 
     this.$nuxt.$on('close-share-email', () => {
-      self.shareWithEmail = false
-    })
+      self.shareWithEmail = false;
+    });
 
     this.$nuxt.$on('open-edit-refferal', () => {
-      self.editRefferalPopup = true
-    })
+      self.editRefferalPopup = true;
+    });
 
     this.$nuxt.$on('close-edit-refferal', () => {
-      self.editRefferalPopup = false
-    })
+      self.editRefferalPopup = false;
+    });
 
     this.$nuxt.$on('open-popup-duplicate', () => {
-      self.duplicateMeal = true
-    })
+      self.duplicateMeal = true;
+    });
 
     // popups
     this.$nuxt.$on('close-popup-delete', () => {
-      self.deleteMealPopup = false
-    })
+      self.deleteMealPopup = false;
+    });
 
     this.$nuxt.$on('close-popup-duplicate', () => {
-      self.duplicateMeal = false
-    })
+      self.duplicateMeal = false;
+    });
 
     // open filter popup
     this.$nuxt.$on('toogle-filter-popup', (boolVal, type) => {
-      self.filterType = type
-      self.filterPopupOpened = boolVal
-    })
+      self.filterType = type;
+      self.filterPopupOpened = boolVal;
+    });
 
     //
     this.$nuxt.$on('dish-info-open', (dishId) => {
-      this.dishInfoPopup = true
-      $nuxt.$emit('nav-bar-toggle', false)
-      $nuxt.$emit('dish-info-popup-set-dish', dishId)
-    })
+      this.dishInfoPopup = true;
+      $nuxt.$emit('nav-bar-toggle', false);
+      $nuxt.$emit('dish-info-popup-set-dish', dishId);
+    });
 
     this.$nuxt.$on('dish-info-close', () => {
-      $nuxt.$emit('nav-bar-toggle', true)
-      this.dishInfoPopup = false
-    })
+      $nuxt.$emit('nav-bar-toggle', true);
+      this.dishInfoPopup = false;
+    });
   },
   mounted() {
     if (this.$store.state.cart.selectedMeals.length === 0) {
       this.$store.commit(
         'cart/generateMealItems',
         this.$store.state.cart.amountOfMeals
-      )
+      );
       this.$store.commit(
         'cart/generateSideDishes',
         this.$store.state.cart.amountOfMeals
-      )
-      this.$store.commit('wizard/refreshPrice', this.$store)
+      );
+      this.$store.commit('wizard/refreshPrice', this.$store);
     }
 
-    document.body.style.overflow = 'hidden'
-    document.body.style.height = '100vh'
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
     // load the products
-    this.loadProducts()
-    this.loadSideDishes()
-    this.loadBreakfast()
-    this.loadSnacks()
-    this.loadVeganBowl()
-    this.loadFilters()
-    this.loadStores()
+    this.loadProducts();
+    this.loadSideDishes();
+    this.loadBreakfast();
+    this.loadSnacks();
+    this.loadVeganBowl();
+    this.loadFilters();
+    this.loadStores();
 
     // check for the redirect
-    const queryString = window.location.search
+    const queryString = window.location.search;
     switch (queryString) {
       case '?order-history':
-        $nuxt.$emit('wizard-view-changed', 3)
-        break
+        $nuxt.$emit('wizard-view-changed', 3);
+        break;
       case '?link-order-and-menu':
-        $nuxt.$emit('wizard-view-changed', 3)
-        break
+        $nuxt.$emit('wizard-view-changed', 3);
+        break;
       case '?profile':
-        $nuxt.$emit('wizard-view-changed', 2)
-        break
+        $nuxt.$emit('wizard-view-changed', 2);
+        break;
       case '?menu':
-        $nuxt.$emit('wizard-view-changed', 7)
-        break
+        $nuxt.$emit('wizard-view-changed', 7);
+        break;
     }
 
     // show the mobile nav
-    $nuxt.$emit('nav-bar-toggle', true)
+    $nuxt.$emit('nav-bar-toggle', true);
   },
   beforeDestroy() {
-    document.body.style.overflow = 'scroll'
-    document.body.style.height = '100%'
+    document.body.style.overflow = 'scroll';
+    document.body.style.height = '100%';
   },
   methods: {
     async loadProducts() {
       const products = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlProducts
-      )
-      this.$store.commit('wizard/setProducts', products)
+      );
+      this.$store.commit('wizard/setProducts', products);
     },
     async loadSideDishes() {
       const dishes = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlSideDishes
-      )
-      this.$store.commit('wizard/setSideDishes', dishes)
+      );
+      this.$store.commit('wizard/setSideDishes', dishes);
     },
     async loadBreakfast() {
       const breakfast = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlBreakfast
-      )
-      this.$store.commit('wizard/setBreakfastMeals', breakfast)
+      );
+      this.$store.commit('wizard/setBreakfastMeals', breakfast);
     },
     async loadStores() {
       // loads the information of stores and pickups
       let stores = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlGetStores
-      )
-      stores = stores[0]
+      );
+      stores = stores[0];
       this.$store.commit(
         'generalInformation/setFirstStoreName',
         stores.first_store_name
-      )
+      );
       this.$store.commit(
         'generalInformation/setSecondStoreName',
         stores.second_store_name
-      )
+      );
       this.$store.commit(
         'generalInformation/setFirstStore',
         JSON.parse(stores.first_store)
-      )
+      );
       this.$store.commit(
         'generalInformation/setSecondStore',
         JSON.parse(stores.second_store)
-      )
+      );
     },
     async loadSnacks() {
       const snacks = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlSnacks
-      )
-      this.$store.commit('wizard/setSnackMeals', snacks)
+      );
+      this.$store.commit('wizard/setSnackMeals', snacks);
     },
     async loadVeganBowl() {
       const veganBowl = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.urlVeganBowl
-      )
-      this.$store.commit('wizard/setVeganBowlMeals', veganBowl)
+      );
+      this.$store.commit('wizard/setVeganBowlMeals', veganBowl);
     },
     async loadFilters() {
       const filters = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
           this.$store.state.apiConfiguration.filterOptions
-      )
-      this.$store.commit('wizard/setFilters', filters.data[0].filters)
-      setGlobalFilters(filters.data[0].filters, this.$store)
-    },
-  },
-}
+      );
+      this.$store.commit('wizard/setFilters', filters.data[0].filters);
+      setGlobalFilters(filters.data[0].filters, this.$store);
+    }
+  }
+};
 </script>
 
 <style scoped>
